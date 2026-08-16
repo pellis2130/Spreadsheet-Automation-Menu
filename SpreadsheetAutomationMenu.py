@@ -1,7 +1,7 @@
 # Name: Princess Ellis
-# Date: August 9, 2026
+# Date: August 16, 2026
 # Description: This program displays a spreadsheet automation menu,
-# validates the user's selection, and prints the current date and time.
+# accepts weight data, and converts pounds to kilograms.
 
 from datetime import datetime
 
@@ -13,16 +13,37 @@ menuOptions = (
     "3 Generate Report"
 )
 
-print(f"{studentId} Spreadsheet Automation Menu")
+
+def convertData(data):
+    convertedValue = data / 2.205
+    return convertedValue
+
+
+def getInput():
+    numberOfEntries = int(input("How many entries are you inputting? "))
+
+    for entry in range(numberOfEntries):
+        inputDate = input("Enter a date: ")
+        weight = int(input("Enter the weight in pounds for the inputted date: "))
+
+        # convertData requires the weight in pounds as an argument
+        # and returns the converted weight in kilograms.
+        convertedWeight = convertData(weight)
+
+        print(f"The following was saved at {datetime.now()} :")
+        print(f"{inputDate},{weight},{convertedWeight}")
+
+
+print(f"{studentId}'s Spreadsheet Automation Menu")
 print("Choose a number from the following options")
 
-# menuOption represents each available option stored in the menuOptions tuple.
 for menuOption in menuOptions:
     print(menuOption)
 
 selectedOption = input("Enter an option number: ")
 
-if selectedOption in ("1", "2", "3"):
+if selectedOption == "1":
     print(f"You selected {selectedOption} at {datetime.now()}")
+    getInput()
 else:
-    print("Error: Invalid choice selected.")
+    print("Error: The chosen functionality is not implemented yet")
