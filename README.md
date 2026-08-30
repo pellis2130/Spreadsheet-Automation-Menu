@@ -1,68 +1,45 @@
-# Spreadsheet Automation - Weight Conversion
+# Spreadsheet Automation - Graphing Dynamically Generated Data
 
-## Project Overview
-
-This Python project is a Spreadsheet Automation program that allows a user to enter weight information and convert the entered values from pounds to kilograms.
-
-The project demonstrates the use of functions, arguments, return values, loops, conditional statements, user input, and date/time functionality in Python.
+## Project Summary
+This Python project automates weight data entry, converts pounds to kilograms, stores the information in a CSV file, and generates an Excel report with a configurable line or bar chart.
 
 ## Features
+- Input weight data by date
+- Convert pounds to kilograms
+- Save data to `ZooData.csv`
+- View the current CSV data
+- Generate either a line chart or bar chart
+- Choose pounds or kilograms as the chart data source
+- Save the report and chart to `final.xlsx`
+- Add the student ID and current date as the chart title
+- Label the chart axes appropriately
 
-- Displays a Spreadsheet Automation menu
-- Allows the user to select the Input Data option
-- Accepts multiple data entries from the user
-- Uses a `for` loop to process the requested number of entries
-- Accepts a date and weight for each entry
-- Converts weight from pounds to kilograms
-- Displays the original and converted values
-- Displays the current date and time when information is processed
-- Displays an error message for menu functionality that has not been implemented yet
+## Required Library
+The project uses `openpyxl` for Excel spreadsheet and chart generation.
 
-## Menu Options
+Install it with:
 
-The program displays the following options:
+```bash
+pip install openpyxl
+```
 
-1. Input Data
-2. View Current Data
-3. Generate Report
+## Run the Program
 
-Currently, the **Input Data** option is implemented. The other options will be developed in future stages of the project.
+```bash
+python SpreadsheetAutomationMenu.py
+```
 
-## Weight Conversion
+For the required screenshot, select:
+1. `3` - Generate Report
+2. `2` - Bar Chart (or `1` for Line Chart)
+3. `2` - Kilograms (or `1` for Pounds)
 
-The program converts pounds to kilograms using the following formula:
+The program creates `final.xlsx` in the same folder.
 
-`kilograms = pounds / 2.205`
+## Files
+- `SpreadsheetAutomationMenu.py` - Main Python program
+- `ZooData.csv` - Weight data
+- `final.xlsx` - Excel report containing the chart
 
-For example:
-
-`100 pounds = approximately 45.35 kilograms`
-
-## Functions
-
-### `convertData(data)`
-
-Accepts a weight in pounds as an argument, converts the value to kilograms, and returns the converted value.
-
-### `getInput()`
-
-Asks the user how many entries will be entered. It then uses a `for` loop to collect a date and weight for each entry. The function calls `convertData()` and displays the original and converted information.
-
-## Example Output
-
-```text
-priell10453's Spreadsheet Automation Menu
-Choose a number from the following options
-1 Input Data
-2 View Current Data
-3 Generate Report
-
-Enter an option number: 1
-You selected 1 at 2026-08-16 14:05:00
-
-How many entries are you inputting? 3
-
-Enter a date: 10/10/2026
-Enter the weight in pounds for the inputted date: 80
-The following was saved at 2026-08-16 14:05:15:
-10/10/2026,80,36.281179138321995
+## Author
+Princess Ellis
